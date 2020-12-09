@@ -1,0 +1,12 @@
+.container {
+  max-width: 120rem; //1200 pixels, else 100% of the viewport width
+  //this will center the container and its contents
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: 0 2rem 6rem var(--shadow-dark);
+
+  min-height: 50rem;
+}
+
+.header {
+}
