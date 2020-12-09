@@ -5,8 +5,33 @@
   background-color: var(--color-grey-light-2);
   box-shadow: 0 2rem 6rem var(--shadow-dark);
 
+  //FOR TESTING
   min-height: 50rem;
 }
 
 .header {
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-1);
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+
+  //flex grow - determines ability for item to grow if necessary,
+  //flex shrink - flex-shrink CSS property sets the flex shrink factor of a flex item.
+  //If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
+
+  flex: 0 0 18%;
+}
+
+.hotel-view {
+  //element should grow as much as it can
+  flex: 1;
+
+  background-color: #fff;
 }
