@@ -2,7 +2,7 @@
 
 .logo {
   height: 3.25rem;
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
 /////////////////////////////////////////////////////
@@ -79,27 +79,61 @@
 
 /////////////////////////////////////////////////////
 .user-nav {
-  background-color: palegreen;
+  display: flex;
+  //vertical align among container
+  align-items: center;
+  //Allows the default alignment along the cross axis to be overridden for individual flex items.
+  align-self: stretch;
+
+  //Select all direct children
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+
+    //flex
+    display: flex;
+    align-items: center;
+  }
+
+  //if hover over the divs
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
 
   &__icon-box {
+    //using svg for position relative was wonky - used next closest parent instead
+    position: relative;
   }
 
   &__icon {
     height: 2.25rem;
     width: 2.25rem;
+    fill: var(--color-grey-dark-2);
   }
 
   &__notification {
-  }
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
 
-  &__user {
+    //center element (in this case - text ) within container
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__user-photo {
     height: 3.75rem;
     border-radius: 50%;
-  }
 
-  &__user-name {
+    //give photo some space
+    margin-right: 1rem;
   }
 }
