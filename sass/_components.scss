@@ -2,21 +2,78 @@
 
 .logo {
   height: 3.25rem;
+  margin-left: 3rem;
 }
 
 /////////////////////////////////////////////////////
 
 .search {
-  background-color: orangered;
+  flex: 0 0 40%;
+
+  display: flex;
+  //vertically aligns the search bar within its container
+  align-items: center;
+  //centers the search bar within its flex container
+  justify-content: center;
+
   &__input {
+    //get from parent
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+
+    background-color: var(--color-grey-light-2);
+    border: none;
+    //top/bottom left/right
+    padding: 0.7rem 2rem;
+    border-radius: 10rem;
+    width: 90%;
+    transition: all 0.2s;
+    margin-right: -3rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-dark-1);
+      color: #fff;
+    }
+
+    &::placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light-4);
+    }
+
+    &:focus::placeholder {
+      color: #fff;
+    }
+  }
+
+  //adjacent selector - select the button adjacent html-wise to the input
+  &__input:focus + &__button {
+    transition: all 0.2s;
+    background-color: var(--color-grey-dark-1);
   }
 
   &__button {
+    transition: all 0.2s;
+    border: none;
+    background-color: var(--color-grey-light-2);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      //for tactile effect when clicked
+      transform: translateY(2px);
+    }
   }
 
+  //svg
   &__icon {
     height: 2rem;
     width: 2rem;
+    fill: var(--color-grey-dark-3);
   }
 }
 
