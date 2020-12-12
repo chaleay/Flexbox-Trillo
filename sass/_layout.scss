@@ -6,7 +6,7 @@
   box-shadow: 0 2rem 6rem var(--shadow-dark);
 
   //FOR TESTING
-  min-height: 50rem;
+  //min-height: 50rem;
 }
 
 .header {
@@ -33,11 +33,17 @@
   //If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
 
   flex: 0 0 18%;
+  display: flex;
+  //rotates the flex direction
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hotel-view {
   //element should grow as much as it can
   flex: 1;
-
   background-color: #fff;
+
+  // for testing purposes
+  height: 80rem;
 }
