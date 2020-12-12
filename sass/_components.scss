@@ -142,15 +142,70 @@
 // Side Nav
 //////////
 .side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem;
+
   &__item {
+    //need to set this so that the pseudo element is then position in relation to this one
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
   }
 
-  &__link {
+  //small line that becomes visible on hover
+  &__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    //where the transform begins from
+    transform-origin: center;
+    //set time for animation of different properties, second param is delay
+    transition: transform 0.2s, width 0.3s cubic-bezier(1, 0, 0, 1) 0.1s,
+      background-color 0.1s;
+    box-shadow: 0 0 1.5rem var(--shadow-dark);
+  }
+
+  &__item--active::before,
+  &__item:hover::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    //top/bot left/right
+    padding: 1.5rem 1.5rem;
+
+    //flexbox settings to align text and icon
+    display: flex;
+    align-items: center;
+
+    //to see text
+    position: relative;
+    z-index: 100;
   }
 
   &__icon {
     width: 1.75rem;
     height: 1.75rem;
+    margin-right: 2rem;
+    //use the color of the parent element var(--color-grey-light-1);
+    fill: currentColor;
   }
 }
 
