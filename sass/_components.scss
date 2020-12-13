@@ -235,8 +235,16 @@
 
 .overview {
   display: flex;
+  //center vertically
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
 
   &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem;
   }
 
   &__stars {
@@ -244,6 +252,8 @@
     //it occupies so much space
     //flex: 1;
     margin-right: auto;
+    //get rid of white space on bottom
+    display: flex;
   }
 
   &__icon-location,
@@ -254,14 +264,82 @@
   }
 
   &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-location {
+    margin-right: 0.5rem;
   }
 
   &__rating {
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-left: 3rem;
+    //override the default cross alignment for this specific one
+    padding: 0 2rem;
+    align-self: stretch;
+    border-left: 1px solid var(--color-grey-light-2);
+
+    //FLEX SETTINGSD
+    //ALIGN ITEMS AND JUSTIFY CONTENT ALWAYS NEED TO BE SPECIFIED HERE FOR THE CONTAINER
+    //DOES NOT AFFECT THE ALIGN-SELF ABOVE - THAT IS SPECIFICALLY MEANT TO OVERRIDE DEFAULT ALIGNMNET
+    //OF THE PARENT CONTAINER i THINK
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   &__rating-average {
+    font-size: 2.5rem;
+    font-weight: 300;
   }
 
   &__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+
+//////////////
+// Button Inline
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  //so border has same color as text
+  border-bottom: 1px solid currentColor;
+  padding: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1.2s infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
   }
 }
