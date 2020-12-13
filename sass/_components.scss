@@ -216,3 +216,52 @@
   padding: 2.25rem;
   color: var(--color-grey-light-4);
 }
+
+/////////////
+// Gallery
+
+.gallery {
+  display: flex;
+
+  &__photo {
+    //need to set width and height in percentages for maximum reponsiveness
+    width: 100%;
+    display: block;
+  }
+}
+
+////////////////////
+// Hotel Overview
+
+.overview {
+  display: flex;
+
+  &__heading {
+  }
+
+  &__stars {
+    //grow and occupy as much space as possible, but not ideal because
+    //it occupies so much space
+    //flex: 1;
+    margin-right: auto;
+  }
+
+  &__icon-location,
+  &__icon-star {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+  }
+
+  &__rating {
+  }
+
+  &__rating-average {
+  }
+
+  &__rating-count {
+  }
+}
