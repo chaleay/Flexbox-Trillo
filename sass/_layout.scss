@@ -53,6 +53,8 @@
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
+  //align-items affets cross axis, which is y axis by default, x axis if using column direction
+  align-items: flex-start;
 }
 
 .description {
@@ -65,5 +67,7 @@
 }
 
 .user-reviews {
+  //elements will grow to fit rest of container, if it was 0 elements would simply
+  //just take up space that they need
   flex: 1;
 }
