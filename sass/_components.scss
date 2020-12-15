@@ -146,11 +146,24 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin-top: 0rem;
+  }
+
   &__item {
     //need to set this so that the pseudo element is then position in relation to this one
     position: relative;
+
     &:not(:last-child) {
       margin-bottom: 0.75rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
+      //to overrwrite setting from above, set as important
+      //i couldnt get it to work without it
+      margin-bottom: 0rem !important;
     }
   }
 
@@ -198,6 +211,11 @@
     //to see text
     position: relative;
     z-index: 100;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
   }
 
   &__icon {
@@ -215,6 +233,10 @@
   text-align: center;
   padding: 2.25rem;
   color: var(--color-grey-light-4);
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 /////////////
@@ -425,7 +447,9 @@
     border: 3px solid#fff;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
+
+      //TODO: media query at 900px or 56.25em
     }
   }
 }

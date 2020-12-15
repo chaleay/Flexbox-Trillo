@@ -7,6 +7,11 @@
 
   //FOR TESTING
   //min-height: 50rem;
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
@@ -23,6 +28,11 @@
 
 .content {
   display: flex;
+
+  //need this so that navbar goes on top
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -37,6 +47,11 @@
   //rotates the flex direction
   flex-direction: column;
   justify-content: space-between;
+
+  // @media only screen and (max-width: $bp-medium) {
+  // to center elements in nav
+  // align-items: center;
+  // }
 }
 
 .hotel-view {
