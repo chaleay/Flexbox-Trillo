@@ -55,10 +55,10 @@
   border-bottom: var(--line);
   //align-items affets cross axis, which is y axis by default, x axis if using column direction
   align-items: flex-start;
+  font-size: 1.4rem;
 }
 
 .description {
-  font-size: 1.4rem;
   background-color: #fff;
   box-shadow: var(--shadow-light);
   padding: 3rem;
