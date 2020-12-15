@@ -70,4 +70,7 @@
   //elements will grow to fit rest of container, if it was 0 elements would simply
   //just take up space that they need
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
