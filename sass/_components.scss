@@ -16,6 +16,12 @@
   //centers the search bar within its flex container
   justify-content: center;
 
+  @media only screen and (max-width: $bp-smaller) {
+    order: 1;
+    //make search bar wider so it wraps
+    flex: 0 0 100%;
+  }
+
   &__input {
     //get from parent
     font-family: inherit;
@@ -31,6 +37,14 @@
     transition: all 0.2s;
     margin-right: -3rem;
 
+    //PHONE SCREEN MEDIA
+    @media only screen and (max-width: $bp-smaller) {
+      width: 100%;
+      border-radius: 0rem;
+      margin-right: 0;
+      color: var(--color-primary);
+    }
+
     &:focus {
       outline: none;
       width: 100%;
@@ -41,6 +55,10 @@
     &::placeholder {
       font-weight: 100;
       color: var(--color-grey-light-4);
+
+      @media only screen and (max-width: $bp-smaller) {
+        color: var(--color-primary);
+      }
     }
 
     &:focus::placeholder {
@@ -59,6 +77,9 @@
     border: none;
     background-color: var(--color-grey-light-2);
 
+    //on screens < 500px, do not display svg for now
+    //TODO: replace placeholder with fonticon?
+
     &:focus {
       outline: none;
     }
@@ -74,6 +95,10 @@
     height: 2rem;
     width: 2rem;
     fill: var(--color-grey-dark-3);
+
+    @media only screen and (max-width: $bp-smaller) {
+      display: none;
+    }
   }
 }
 
@@ -217,6 +242,11 @@
       justify-content: center;
       padding: 3rem 1rem;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -225,6 +255,13 @@
     margin-right: 2rem;
     //use the color of the parent element var(--color-grey-light-1);
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-small) {
+      margin: 0;
+      margin-bottom: 0.25rem;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 }
 
@@ -268,6 +305,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 1.25rem 2rem;
+      font-size: 1.6rem;
+    }
   }
 
   &__stars {
@@ -313,16 +355,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.4rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.5rem;
     font-weight: 300;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
