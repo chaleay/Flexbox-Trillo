@@ -56,6 +56,8 @@
       font-weight: 100;
       color: var(--color-grey-light-4);
 
+      //Changed color of placeholder on smaller screen due to
+      //visibility concerns
       @media only screen and (max-width: $bp-smaller) {
         color: var(--color-primary);
       }
@@ -77,9 +79,6 @@
     border: none;
     background-color: var(--color-grey-light-2);
 
-    //on screens < 500px, do not display svg for now
-    //TODO: replace placeholder with fonticon?
-
     &:focus {
       outline: none;
     }
@@ -96,6 +95,8 @@
     width: 2rem;
     fill: var(--color-grey-dark-3);
 
+    //on screens < 500px, do not display svg for now
+    //TODO: replace placeholder with fonticon?
     @media only screen and (max-width: $bp-smaller) {
       display: none;
     }
@@ -463,16 +464,20 @@
     margin-right: 0.7rem;
 
     //older browsers
-    //background-image: url(../img/chevron-thin-right.svg);
-    //background-size: cover;
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
 
     //newer browsers - using mask approach
-    background-color: var(--color-primary);
-    //put pask on top of it
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-image: url(../img/chevron-thin-right.svg);
-    mask-size: cover;
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: var(--color-primary);
+      //put pask on top of it
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+      //get rid of older browser modification
+      background-image: none;
+    }
   }
 }
 
