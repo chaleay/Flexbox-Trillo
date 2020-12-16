@@ -213,6 +213,7 @@
     z-index: 100;
 
     @media only screen and (max-width: $bp-medium) {
+      //center text/icon within the container
       justify-content: center;
       padding: 3rem 1rem;
     }
@@ -435,6 +436,8 @@
   }
 
   &__friends {
+    display: flex;
+    flex-direction: row;
   }
 
   &__photo {
@@ -464,6 +467,12 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    //good idea to lower padding/margin by 1rem increments?
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     margin-bottom: 2rem;
@@ -528,6 +537,10 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
 
   &__book-now {
     font-size: 2rem;
