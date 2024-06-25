@@ -1,5 +1,5 @@
 # Flexbox-Trillo
-Project meant to familiarize myself with the fundamentals of flexbox, and build my skills with cass
+An HTML/CSS/JS design template I created for travel booking agencies. Utlizes the latest cutting edge features of CSS.
 
 <h1>
 See it in action
